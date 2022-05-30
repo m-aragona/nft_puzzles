@@ -13,7 +13,7 @@ import { IMAGES5X5 } from './Images5x5';
 import { ethers } from 'ethers';
 import PuzzlesContractJSON from './PuzzlesContract.json';
 
-// https://m-aragona.github.io/nft-parts-project/
+// https://m-aragona.github.io/nft_minting/
 // npm run build
 // npm run deploy
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESSES
@@ -45,9 +45,9 @@ function App() {
           <NavBar className="NavBar" position='fixed' top='0' accounts={accounts} setAccounts={setAccounts} />
           <div className='container'>
             <Routes>
-              <Route path='puzzle-project-v1/' element={<Home contract={contract} />} />
-              <Route path='puzzle-project-v1/ranking' element={<Ranking contract={contract} />} />
-              <Route path='puzzle-project-v1/profile' element={<Profile account={accounts[0]} setPuzzleSize={setPuzzleSize} puzzleSize={puzzleSize} contract={contract} />} />
+              <Route path='nft_minting/' element={<Home contract={contract} />} />
+              <Route path='nft_minting/ranking' element={<Ranking contract={contract} />} />
+              <Route path='nft_minting/profile' element={<Profile account={accounts[0]} setPuzzleSize={setPuzzleSize} puzzleSize={puzzleSize} contract={contract} />} />
               <Route path='*' element={<ErrorPage />} />
             </Routes>
           </div>
