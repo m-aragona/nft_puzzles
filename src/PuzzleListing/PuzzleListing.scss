@@ -1,0 +1,44 @@
+@import '../commons/colors.scss';
+
+.puzzle-list {
+    margin: 20px 0px;
+
+    h2 {
+        color: $font-secondary;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+}
+
+.card-item {
+    background: $secondary-color;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 400px;
+    height: 100%;
+    padding: 10px;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
+    }
+}
+
+.card-top {
+    height: 300px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.card-bottom {
+    padding: 20px;
+}
+
+// .puzzle-container {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+//     grid-gap: 15px;
+// }

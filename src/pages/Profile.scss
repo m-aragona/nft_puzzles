@@ -1,0 +1,168 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 3px solid black;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+}
+
+.select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: black;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+}
+
+select,
+.selector:after {
+    grid-area: select;
+}
+
+select:focus+.focus {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 2px solid black;
+    border-radius: inherit;
+}
+
+// /* The container must be positioned relative: */
+// .custom-select {
+//     font-family: Arial;
+// }
+
+// .custom-select select {
+//     display: none;
+//     /*hide original SELECT element: */
+// }
+
+// .select-selected {
+//     background-color: DodgerBlue;
+// }
+
+// /* Style the arrow inside the select element: */
+// .select-selected:after {
+//     position: absolute;
+//     content: "";
+//     top: 14px;
+//     right: 10px;
+//     width: 0;
+//     height: 0;
+//     border: 6px solid transparent;
+//     border-color: #fff transparent transparent transparent;
+// }
+
+// /* Point the arrow upwards when the select box is open (active): */
+// .select-selected.select-arrow-active:after {
+//     border-color: transparent transparent #fff transparent;
+//     top: 7px;
+// }
+
+// /* style the items (options), including the selected item: */
+// .select-items div,
+// .select-selected {
+//     color: #ffffff;
+//     padding: 8px 16px;
+//     border: 1px solid transparent;
+//     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+//     cursor: pointer;
+// }
+
+// /* Style items (options): */
+// .select-items {
+//     position: absolute;
+//     background-color: DodgerBlue;
+//     top: 100%;
+//     left: 0;
+//     right: 0;
+//     z-index: 99;
+// }
+
+// /* Hide the items when the select box is closed: */
+// .select-hide {
+//     display: none;
+// }
+
+// .select-items div:hover,
+// .same-as-selected {
+//     background-color: rgba(0, 0, 0, 0.1);
+// }
+
+
+// .Profile-overlay {
+//     background-color: #282c34;
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     z-index: -1;
+
+// }
+
+// .Profile-bg {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url(../assets/Cards/img1.png);
+//     z-index: -2;
+// }
+
+// .Profile-handle-container {
+//     width: 100%;
+//     height: 10px;
+//     position: absolute;
+//     top: 10px;
+// }
+
+// .Profile-handle {
+//     width: 100px;
+//     height: 10px;
+//     background-color: white;
+//     margin: 0 auto;
+//     border-radius: 25px;
+//     opacity: 0;
+//     cursor: pointer;
+// }
+
+// .Profile-handle:hover {
+//     opacity: .1;
+// }
