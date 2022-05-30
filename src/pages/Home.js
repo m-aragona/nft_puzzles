@@ -29,14 +29,14 @@ const Home = ({ contract }) => {
             <Box>
                 <div style={{ background: "#ECECEC", padding: '5px', borderRadius: '10px' }}>
                     <div style={{ paddingLeft: '20px', paddingRight: '20px' }}>
-                        <Text fontWeight='bold' fontSize="25px" textStyle='bold' >How to mint and play:</Text>
-                        <Text fontSize="17px" marginTop='5px'>1. Connect your <b>Metamask</b> to this <b>webpage</b>.</Text>
-                        <Text fontSize="17px" marginTop='5px'>2. In your <b>Metamask</b>, connect to <b>Rinkeby Network</b>.</Text>
-                        <Text fontSize="17px" marginTop='5px'>3. Get some <b>fake ETH</b> from here: <Link href="https://rinkebyfaucet.com" isExternal="true">https://rinkebyfaucet.com</Link></Text>
-                        <Text fontSize="17px" marginTop='5px'>4. Select any NFT of the list above and mint it.</Text>
-                        <Text fontSize="17px" marginTop='5px'>5. Go to MyPuzzles, select your minted NFT and complete the puzzle.</Text>
-                        <Text fontSize="17px" marginTop='5px'>6. Remember you can sell your NFT in <b><Link href="https://testnets.opensea.io" isExternal="true">Opensea</Link></b>.</Text>
-                        <Text fontSize="17px" marginTop='5px'>7. Once you complete the puzzle you can claim points and you will be listed on the Global Ranking.</Text>
+                        <Text fontWeight='bold' fontSize="23px" textStyle='bold' >How to mint and play:</Text>
+                        <Text className='usage'>1. Connect your <b>Metamask</b> to this <b>webpage</b>.</Text>
+                        <Text className='usage' >2. In your <b>Metamask</b>, connect to <b>Rinkeby Network</b>.</Text>
+                        <Text className='usage' >3. Get some <b>fake ETH</b> from here: <Link href="https://rinkebyfaucet.com" isExternal="true">https://rinkebyfaucet.com</Link></Text>
+                        <Text className='usage' >4. Select any NFT of the list above and mint it.</Text>
+                        <Text className='usage' >5. Go to MyPuzzles, select your minted NFT and complete the puzzle.</Text>
+                        <Text className='usage' >6. Remember you can sell your NFT in <b><Link href="https://testnets.opensea.io" isExternal="true">Opensea</Link></b>.</Text>
+                        <Text className='usage' >7. Once you complete the puzzle you can claim points and you will be listed on the Global Ranking.</Text>
                     </div>
                 </div>
             </Box>

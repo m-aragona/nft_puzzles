@@ -41,15 +41,15 @@ const NavBar = ({ accounts, setAccounts }) => {
 
                 {/* Right Side - Sections and Connect */}
                 <Flex justify="space-around" align="center" width="25%" marginRight="10px">
-                    <Rrd_Link to="/puzzle-project-v1/" >
+                    <Rrd_Link to="/nft_minting/" >
                         <Box textColor='white' fontSize='17px' cursor="pointer">Home</Box>
                     </Rrd_Link>
                     <Spacer />
-                    <Rrd_Link to="/puzzle-project-v1/profile">
+                    <Rrd_Link to="/nft_minting/profile">
                         <Box textColor='white' fontSize='17px' cursor="pointer">My Puzzles</Box>
                     </Rrd_Link>
                     <Spacer />
-                    <Rrd_Link to="/puzzle-project-v1/ranking">
+                    <Rrd_Link to="/nft_minting/ranking">
                         <Box textColor='white' fontSize='17px' cursor="pointer">Ranking</Box>
                     </Rrd_Link>
                     <Spacer />
