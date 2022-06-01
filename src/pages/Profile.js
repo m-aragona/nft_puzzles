@@ -1,12 +1,9 @@
 import React, { useState, useEffect, Suspense, useRef } from 'react';
-import { ethers } from 'ethers';
-import PartsCollectionJSON from '../PuzzlesContract.json';
-//import Picture from '../components/Picture';
 import { IMGCARDS } from '../ImgCards';
 import "./Profile.scss"
 import { Flex, Button, Box, Text } from '@chakra-ui/react';
-import { useSpring, animated } from 'react-spring';
-import { useDrag } from 'react-use-gesture';
+// import { useSpring, animated } from 'react-spring';
+// import { useDrag } from 'react-use-gesture';
 import lazy from 'react-lazy-with-preload'
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESSES
@@ -15,8 +12,6 @@ const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESSES
 const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
     const [arrPuzzles, setArrPuzzles] = useState([])
     const [puzzleId, setPuzzleId] = useState()
-    const [puzzleCompleted, setPuzzleCompleted] = useState(false)
-    const [showOtherComponent, setShowOtherComponent] = useState(false);
 
     const childRef = useRef();
 
@@ -25,8 +20,8 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
     console.log('Datos en Profile:', puzzleSize.name, puzzleSize.prop1, puzzleSize.prop2)
 
     const arrPuzzleSize = [
-        { id: 0, name: '5x5', prop1: '0 0 20%', prop2: '100px 100px', length: 25 },
-        { id: 1, name: '10x10', prop1: '0 0 10%', prop2: '50px 50px', length: 100 },
+        { id: 0, name: '5x5', prop1: '0 0 20%', prop2: '100px 100px', length: 25, rows: 5 },
+        { id: 1, name: '10x10', prop1: '0 0 10%', prop2: '50px 50px', length: 100, rows: 10 },
         // { id: 2, name: '100x100', prop1: '0 0 20%', prop2: '100px 100px', length: 10000 }
     ]
 
@@ -52,15 +47,11 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
 
     const handleChange = (e) => {
         setPuzzleId(IMGCARDS[e.target.options[e.target.options.selectedIndex].id - 1]);
-        Picture.preload()
-        setShowOtherComponent(true)
-        // -1 for the first option with the Select... text
-        //console.log(e.target.options[e.target.options.selectedIndex].id)
     };
 
     const handleSize = (e) => {
         setPuzzleSize(arrPuzzleSize[e.target.options.selectedIndex])
-        console.log("handleSize", e.target.options.selectedIndex)
+
     }
     //puzzleId ? puzzleId.name : null
 
@@ -81,6 +72,7 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
 
     function handleClaimPoints() {
         childRef.current.handleClaim()
+
     }
 
     return (
@@ -120,7 +112,7 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
 
                 <Box width='40%' alignContent='center'>
                     <Suspense fallback={<h2>Loading puzzle...</h2>}>
-                        {puzzleId ? showOtherComponent && <Picture ref={childRef} puzzleId={puzzleId} puzzleSize={puzzleSize} account={account} /> : null}
+                        {puzzleId ? <Picture ref={childRef} puzzleId={puzzleId} puzzleSize={puzzleSize} account={account} /> : null}
                     </Suspense>
                 </Box>
 
