@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import NavBar from './components/NavBar';
 import { GridProvider } from "./components/GridContext";
@@ -40,20 +40,32 @@ function App() {
 
   return (
     <GridProvider puzzleSize={puzzleSize} images={handlePuzzleSize(puzzleSize.name)}>
+
       <div className="App">
-        <Router>
-          <NavBar className="NavBar" position='fixed' top='0' accounts={accounts} setAccounts={setAccounts} />
-          <div className='container'>
-            <Routes>
-              <Route path='nft_minting/' element={<Home contract={contract} />} />
-              <Route path='nft_minting/ranking' element={<Ranking contract={contract} />} />
-              <Route path='nft_minting/profile' element={<Profile account={accounts[0]} setPuzzleSize={setPuzzleSize} puzzleSize={puzzleSize} contract={contract} />} />
-              <Route path='*' element={<ErrorPage />} />
-            </Routes>
-          </div>
-        </Router>
-        <Footer />
+        <html>
+          <body>
+            <Router>
+              <header>
+                <NavBar className="NavBar" accounts={accounts} setAccounts={setAccounts} />
+              </header>
+
+              <div className='container'>
+                <Routes>
+                  <Route path='nft_minting/' element={<Home contract={contract} />} />
+                  <Route path='nft_minting/ranking' element={<Ranking contract={contract} />} />
+                  <Route path='nft_minting/profile' element={<Profile account={accounts[0]} setPuzzleSize={setPuzzleSize} puzzleSize={puzzleSize} contract={contract} />} />
+                  <Route path='*' element={<ErrorPage />} />
+                </Routes>
+              </div>
+
+            </Router>
+            <footer>
+              <Footer />
+            </footer>
+          </body>
+        </html>
       </div >
+
     </GridProvider >
   );
 }

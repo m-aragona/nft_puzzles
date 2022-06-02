@@ -21,6 +21,7 @@ const Home = ({ contract }) => {
 
     }, [])
 
+    
     return (
         <>
             <Text fontSize='30px' fontWeight='bold' marginTop='10px'> Mint Puzzles </Text>

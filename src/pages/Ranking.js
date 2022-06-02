@@ -45,7 +45,6 @@ const Ranking = ({ contract }) => {
                 <ChakraProvider >
                     <Box width='50%' p={4}>
                         <Table>
-                            {/* <TableCaption>Global Ranking</TableCaption> */}
                             <Thead>
                                 <Tr>
                                     <Th>Wallet</Th>

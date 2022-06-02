@@ -20,6 +20,8 @@
 gif_duration.py
 handle_gifs.py
 handleImages.py
+mergeGifs.py
+mergeImages.py
 
 npm-debug.log*
 yarn-debug.log*
