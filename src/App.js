@@ -47,6 +47,7 @@ function App() {
             <Router>
               <header>
                 <NavBar className="NavBar" accounts={accounts} setAccounts={setAccounts} />
+                {/* <py-script> print('Now you can!') </py-script> */}
               </header>
 
               <div className='container'>

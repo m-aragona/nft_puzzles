@@ -42,8 +42,8 @@ const PuzzleListing = ({ puzzlesMinted }) => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 4,
 
         afterChange: onSliderChange,
         beforeChange: () => setClickable(false),
@@ -53,7 +53,7 @@ const PuzzleListing = ({ puzzlesMinted }) => {
                 breakpoint: 1500,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 4,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: false,
                 }

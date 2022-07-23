@@ -2,8 +2,6 @@ import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { IMGCARDS } from '../ImgCards';
 import "./Profile.scss"
 import { Flex, Button, Box, Text } from '@chakra-ui/react';
-// import { useSpring, animated } from 'react-spring';
-// import { useDrag } from 'react-use-gesture';
 import lazy from 'react-lazy-with-preload'
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESSES
@@ -53,40 +51,21 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
         setPuzzleSize(arrPuzzleSize[e.target.options.selectedIndex])
 
     }
-    //puzzleId ? puzzleId.name : null
-
-    // function handleRerender() {
-    //     setPuzzleId({ ...puzzleId })
-    // }
-
-    // const [, updateState] = React.useState();
-    // const forceUpdate = React.useCallback(() => updateState({}), []);
-
-    // const handlePos = useSpring({ y: 0 });
-    // const bindHandlePos = useDrag((params) => {
-    //     const y = params.xy[1]
-    //     if (y >= 0 && y <= SCREEN_HEIGHT) {
-    //         handlePos.y.set(params.offset[1]);
-    //     }
-    // })
 
     function handleClaimPoints() {
         childRef.current.handleClaim()
 
     }
 
+    function handleMintPic() {
+
+
+    }
+
     return (
 
         <>
-            {/* <animated.div {...bindHandlePos()} style={{ y: handlePos.y, }} className="Profile-handle-container">
-                <div className='Profile-handle'></div>
-            </animated.div>
-            <animated.div style={{ y: handlePos.y }} className="Profile-overlay"></animated.div>
-            <div className="Profile-bg"></div> */}
-
-            {/* <button onClick={forceUpdate}>Rerender</button> */}
-            <Text fontSize='30px' fontWeight='bold' marginTop='10px'>Profile</Text>
-
+            <Text fontSize='30px' fontWeight='bold' marginTop='10px' marginBottom='20px' paddingLeft='30px'>Profile</Text>
 
             <div className="select">
                 <select id="standard-select" defaultValue='default' onChange={handleChange}>
@@ -117,7 +96,8 @@ const Profile = ({ account, setPuzzleSize, puzzleSize, contract }) => {
                 </Box>
 
                 <Box width='30%' >
-                    <Button width='80%' height='50px' float='right' cursor='pointer' onClick={handleClaimPoints} borderRadius='10px' >CLAIM POINTS!</Button>
+                    <Button width='80%' height='50px' float='center' cursor='pointer' onClick={handleClaimPoints} borderRadius='10px' border='solid'>CLAIM POINTS!</Button>
+                    {/* <Button width='80%' height='50px' float='center' cursor='pointer' onClick={handleMintPic} borderRadius='10px' border='solid' >MINT PIC!</Button> */}
                 </Box>
 
             </Flex>) : null}
